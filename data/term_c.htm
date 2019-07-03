@@ -1,0 +1,71 @@
+﻿<div class="row">
+	<div id="content" class="container">
+		<div class="row">
+			<div class="col-sm-3">				
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<h3 id="title" class="alert-warning text-center">Термометры</h3>
+				</div>
+				<hr>
+				<div class="panel-group">
+					<div class="panel panel-info">
+						<div class="panel-heading">Term_top_addr</div>
+						<div class="panel-body">
+							<div id="Term_top_addr"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></div>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">Term_bot_addr</div>
+						<div class="panel-body">
+							<div id="Term_bot_addr"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></div>
+						</div>
+					</div>
+       				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">Изменение адреса термометра</div>
+					<div class="panel-body">
+						<form>
+							<div class="form-group">
+       								<label for="new_term_name"><h4>Имя в системе</h4></label>
+								<input class="form-control input-lg" type="text" id="new_term_name" placeholder="Term_top_addr">
+								<br />
+								<label for="new_term_addr"><h4>Адрес</h4></label>
+								<select class="form-control input-lg" id="new_term_addr">
+								</select>
+								<br />
+							</div>						
+						</form>
+						<button type="button" id="add_new_term_addr" class="btn btn-primary">Сохранить</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+			</div>
+		</div>
+		<div class="row footer">
+			<div class="col-sm-9">&nbsp
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="answ_ok" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="alert alert-success" role="alert">
+				<h4 class="alert-heading">Сообщение</h4>
+				<p class="mb-0">Настройки сохранены успешно!</p><hr>
+		        	<button type="button" class="btn btn-warning btn-lg btn-block" data-dismiss="modal">Close</button>
+			</div>
+	</div>
+</div>
+<div class="modal fade" id="answ_err" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="alert alert-danger" role="alert">
+				<h4 class="alert-heading">Сообщение</h4>
+				<p class="mb-0">Необходимо заполнить все поля!</p><hr>
+		        	<button type="button" class="btn btn-warning btn-lg btn-block" data-dismiss="modal">Close</button>
+			</div>
+	</div>
+</div>
+
+

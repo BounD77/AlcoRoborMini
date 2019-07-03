@@ -1,0 +1,79 @@
+﻿<div class="row">
+	<div id="content" class="container">
+		<div class="row">
+			<div class="col-sm-3">				
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<h3 id="title" class="alert-warning text-center">Настройки</h3>
+					<hr>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="panel panel-info">
+						<div class="panel-heading">Настройки внешнего WiFi</div>
+						<div class="panel-body">
+							<form>
+								<div class="form-group">
+        								<label for="ssid">SSID</label>
+									<input class="form-control" type="text" id="ssid" placeholder="Введите SSID">
+									<label for="password">Пароль</label>
+									<input class="form-control" type="text" id="password" placeholder="Введите пароль">
+								</div>						
+							</form>
+							<button type="button" id="router_set" class="btn btn-primary">Сохранить</button>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">Настройки WiFi в режиме AP</div>
+						<div class="panel-body">
+							<form>
+								<div class="form-group">
+        								<label for="ssid">SSID</label>
+									<input class="form-control" type="text" id="ssid_ap" placeholder="Введите SSID">
+									<label for="password">Пароль</label>
+									<input class="form-control" type="text" id="password_ap" placeholder="Введите пароль">
+								</div>						
+							</form>
+							<button type="button" id="ap_set" class="btn btn-primary">Сохранить</button>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">Перегрузить ESP</div>
+						<div class="panel-body">
+							<button type="button" id="reset_ESP" class="btn btn-danger">Перегрузить</button>
+						</div>
+					</div>
+
+				</div>
+				<hr>
+			</div>
+			<div class="col-sm-3">
+			</div>
+		</div>
+		<div class="row footer">
+			<div class="col-sm-9">&nbsp
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="answ_ok" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="alert alert-success" role="alert">
+				<h4 class="alert-heading">Сообщение</h4>
+				<p class="mb-0">Настройки сохранены успешно!</p><hr>
+		        	<button type="button" class="btn btn-warning btn-lg btn-block" data-dismiss="modal">Close</button>
+			</div>
+	</div>
+</div>
+<div class="modal fade" id="answ_err" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="alert alert-danger" role="alert">
+				<h4 class="alert-heading">Сообщение</h4>
+				<p class="mb-0">Необходимо заполнить все поля!</p><hr>
+		        	<button type="button" class="btn btn-warning btn-lg btn-block" data-dismiss="modal">Close</button>
+			</div>
+	</div>
+</div>
+
+

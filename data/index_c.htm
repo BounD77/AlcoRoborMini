@@ -1,0 +1,247 @@
+﻿<div class="row">
+	<div class="col-sm-12">
+		<div class="row">
+			<h3 id="title" class="alert-warning text-center">ESP8266 server</h3>
+		</div>
+		<hr>
+		<div class="row bg-info">
+			<div class="col-xs-6 text-center">
+				<h3>Дата</h3>
+				<h3 class="gif_loading" id="date"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h3>
+			</div>
+			<div class="col-xs-6 text-center">
+				<h3>Время</h3>
+				<h3 class="gif_loading" id="time"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h3>
+			</div>
+		</div>
+		<hr>
+		<div class="temp_wrapper">
+			<div class="row btn-warning">
+				<h4 class="text-center">Управление клапаном</h4>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<h4 class="text-center">Клапан</h4>
+				</div>
+				<div class="col-xs-4">
+					<h4 class="text-center">ШИМ-Отбор</h4>
+				</div>
+				<div class="col-xs-4">
+					<h4 class="text-center">Циклов:</h4>
+				</div>
+			</div>
+			<div class="row  bg-info">
+				<div class="col-xs-4">
+					<div class="field-eye text-center" id="Is_valve_closed"></div>
+				</div>
+				<div class="col-xs-4">
+					<div class="field-eye text-center" id="pwm_countdown"></div>
+				</div>
+				<div class="col-xs-4">
+					<p class="field-eye text-center" id="Cicles_on">0</p>
+				</div>
+			</div>
+
+			<div class="row btn-warning">
+				<h4 class="text-center">Температура</h4>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h4 class=".bg-light well-sm text-center">Низ С°</h4>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h4 class=".bg-light well-sm text-center">Дельта</h4>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h4 class=".bg-light well-sm text-center">Верх С°</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h1 class="gif_loading" id="Temp_bot"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h1>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h1 class="gif_loading" id="Temp_delta"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h1>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h1 class="gif_loading" id="Temp_top"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h1>
+					</div>
+				</div>
+			</div>
+			<div class="row btn-warning">
+				<h4 class="text-center">Уставка</h4>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h3 class="gif_loading" id="Temp_bot_set"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h3>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h3 class="gif_loading" id="Temp_delta_set"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h3>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<h3 class="gif_loading" id="Temp_top_set"><img src="https://electro-velo.ru/esp/img/mini_loader.gif"></h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row bg-info vpadd10p">
+				<div class="col-xs-4">
+					<div class="text-center">
+						<input type="text" class="form-input-temp" id="new_temp_bot">
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<input type="text" class="form-input-temp" id="new_temp_delta">
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-center">
+						<input type="text" class="form-input-temp" id="new_temp_top">
+					</div>
+				</div>
+			</div>
+			<div class="row bg-info vpadd10p">
+				<div class="col-xs-4">
+					<button type="button" id="set_new_temp_bot" class="btn btn-success btn-block">Сохранить</button>
+				</div>
+				<div class="col-xs-4">
+					<button type="button" id="set_new_temp_delta" class="btn btn-success btn-block">Сохранить</button>
+				</div>
+				<div class="col-xs-4">
+					<button type="button" id="set_new_temp_top" class="btn btn-success btn-block">Сохранить</button>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<div class="valve_wrapper">
+			<div class="row  bg-info">
+		              <h4 class="text-center">Режим работы клапана</h4>
+			</div>
+			<div class="row bg-info" id="valve_mode_descr">
+				<div class="col-xs-4 text-center">
+					<h4>Всегда закрыт</h4>
+				</div>
+				<div class="col-xs-4 text-center">
+					<h2>RUN</h2>
+				</div>
+				<div class="col-xs-4 text-center">
+					<h4>Всегда открыт</h4>
+				</div>
+			</div>
+			<div class="row bg-info">
+				<input id="valve_mode" class="form-control-range" type="range" min="0" max="2" step="1" onchange="ChangeValveMode(this.value);"/>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm">час</h4>
+				</div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-2">
+					<h4 class="well-sm">мин</h4>
+				</div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-2">
+					<h4 class="well-sm">сек</h4>
+				</div>
+
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<h5 class="bg-light well-sm float-left">Длит. вкл</h5>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_on_hour">00</h4>
+				</div>
+				<div class="col-xs-1">
+					<h4 class="well-sm">:</h4>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_on_min">00</h4>
+				</div>
+				<div class="col-xs-1">
+					<h4 class="well-sm">:</h4>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_on_sec">30</h4>
+				</div>
+			</div>
+			<div class="row bg-info" style="padding-bottom: 40px;">
+				<div class="col-xs-3">
+					<button type="button" id="sel_valve_mode_on_save" class="btn btn-success">Сохранить</button>
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_on_hour">
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_on_min">
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_on_sec">
+				</div>
+			</div>
+			<div class="row bg-info">
+				<div class="col-xs-4">
+					<h5 class="bg-light well-sm float-left">Длит. выкл</h5>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_off_hour">00</h4>
+				</div>
+				<div class="col-xs-1">
+					<h4 class="well-sm">:</h4>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_off_min">00</h4>
+				</div>
+				<div class="col-xs-1">
+					<h4 class="well-sm">:</h4>
+				</div>
+				<div class="col-xs-2">
+					<h4 class="well-sm" id="sel_v_off_sec">30</h4>
+				</div>
+			</div>
+			<div class="row bg-info" style="padding-bottom: 40px;">
+				<div class="col-xs-3">
+					<button type="button" id="sel_valve_mode_off_save" class="btn btn-success">Сохранить</button>
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_off_hour">
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_off_min">
+				</div>
+				<div class="col-xs-3 text-center">
+					<input type="text" class="form-input-valve" id="new_sel_valve_off_sec">
+				</div>
+			</div>
+
+		</div>
+		<hr>
+		<div class="row btn-warning">
+			<h4 class="text-center">Управление яркостью дисплея</h4>
+		</div>
+		<div class="row bg-info">
+			<input id="Br_1638" class="form-control-range" type="range" min="0" max="7" step="1" onchange="SetBrightnessDisp1638(this.value);" />
+		</div>
+		<hr>
+	</div>
+</div>
