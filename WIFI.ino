@@ -1,3 +1,5 @@
+byte counter_tries = 0;
+
 void WIFIinit() {
     // --------------------Получаем ssid со страницы
     HTTP.on("/ssid", HTTP_GET, []() {
@@ -31,7 +33,10 @@ void WIFIinit() {
     while (--tries && WiFi.status() != WL_CONNECTED)
     {
         Serial.print(".");
+        tm.setLED(counter_tries, 2);
+        counter_tries++;
         delay(1000);
+
 
     }
     if (WiFi.status() != WL_CONNECTED)
@@ -39,9 +44,11 @@ void WIFIinit() {
         // Если не удалось подключиться запускаем в режиме AP
         Serial.println("");
         Serial.println("WiFi up AP");
+        RunningLeds(true);//включаем красные леды
         StartAPMode();
     }
     else {
+        RunningLeds(false);//включаем зеленые леды
         // Иначе удалось подключиться отправляем сообщение
         // о подключении и выводим адрес IP
         Serial.println("");
@@ -53,7 +60,7 @@ void WIFIinit() {
         String internal_ip = WiFi.localIP().toString();
         Serial.println(internal_ip);
         //если доступ будет только изнутри сети то пишем внутренний адрес в конфигуру
-        //jsonWrite(configLiveJson, "ip", internal_ip);
+        jsonWrite(configLiveJson, "ip", internal_ip);
         //если извне то пишем внешний
         jsonWrite(configLiveJson, "ip", external_ip);
 
@@ -61,8 +68,8 @@ void WIFIinit() {
 }
 
 bool StartAPMode() {
-    IPAddress apIP(192, 168, 1, 40);
-    IPAddress staticGateway(192, 168, 1, 99);
+    IPAddress apIP(192, 168, 1, 2);
+    IPAddress staticGateway(192, 168, 1, 1);
     IPAddress staticSubnet(255, 255, 255, 0);
     jsonWrite(configLiveJson, "ip", apIP.toString());
     // Отключаем WIFI

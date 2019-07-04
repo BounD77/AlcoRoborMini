@@ -2,6 +2,8 @@
 <html lang="en">
  <head>
   <title>ESP Editor</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
   <style type="text/css" media="screen">
    .contextMenu{z-index:300;position:absolute;left:5px;border:1px solid #444;background-color:#f5f5f5;display:none;box-shadow:0 0 10px rgba(0,0,0,.4);font-size:12px;font-family:sans-serif;font-weight:bold}
    .contextMenu ul{list-style:none;top:0;left:0;margin:0;padding:0}
@@ -30,13 +32,13 @@
    #preview{background-color:#EEE;padding:5px}
   </style>
   <script>
-   var urlXXX = 'http://192.168.0.120:8080';//bolt
- /*  if (window.location.search.substring(1).split("=")[1]) {
+   var urlXXX = '';//'http://192.168.0.120:8080';//bolt
+   if (window.location.search.substring(1).split("=")[1]) {
     urlXXX = 'http://'+window.location.search.substring(1).split("=")[1];
    } else {
     urlXXX = 'http://'+window.location.hostname;
    }
- */
+
    function createFileUploader(element, tree, editor){
     var xmlHttp;
     var input = document.createElement("input");

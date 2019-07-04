@@ -1,20 +1,20 @@
 // ------------- Чтение значения json
 String jsonRead(String &json, String name) {
-    DynamicJsonDocument jsonBuffer;
+    DynamicJsonBuffer jsonBuffer;
     JsonObject& root = jsonBuffer.parseObject(json);
     return root[name].as<String>();
 }
 
 // ------------- Чтение значения json
 int jsonReadtoInt(String &json, String name) {
-    DynamicJsonDocument jsonBuffer;
+    DynamicJsonBuffer jsonBuffer;
     JsonObject& root = jsonBuffer.parseObject(json);
     return root[name];
 }
 
 // ------------- Запись значения json String
 String jsonWrite(String &json, String name, String volume) {
-    DynamicJsonDocument jsonBuffer;
+    DynamicJsonBuffer jsonBuffer;
     JsonObject& root = jsonBuffer.parseObject(json);
     root[name] = volume;
     json = "";
@@ -24,7 +24,7 @@ String jsonWrite(String &json, String name, String volume) {
 
 // ------------- Запись значения json int
 String jsonWrite(String &json, String name, int volume) {
-    DynamicJsonDocument jsonBuffer;
+    DynamicJsonBuffer jsonBuffer;
     JsonObject& root = jsonBuffer.parseObject(json);
     root[name] = volume;
     json = "";
@@ -34,7 +34,7 @@ String jsonWrite(String &json, String name, int volume) {
 
 // ------------- Запись значения json float
 String jsonWrite(String &json, String name, float volume) {
-    DynamicJsonDocument jsonBuffer;
+    DynamicJsonBuffer jsonBuffer;
     JsonObject& root = jsonBuffer.parseObject(json);
     root[name] = volume;
     json = "";

@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>ESP8266WS Настройки</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="https://electro-velo.ru/esp/css/style.css">
-		<link rel="stylesheet" href="https://electro-velo.ru/esp/css/bootstrap.min.css">
-		<script type="text/javascript" src="https://electro-velo.ru/esp/js/jquery.min.js"></script>
-		<script type="text/javascript" src="https://electro-velo.ru/esp/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$.get('setup_c.htm', function(data) {
@@ -16,7 +16,7 @@
 					$("#router_set").on("click", function() {
 					        var ssid_val =  $('#ssid').val();
 						var ssid_pass = $('#password').val();
-						if(ssid != '' && ssid_pass != ''){
+						if(ssid_val != '' && ssid_pass != ''){
 							var url = '/ssid?ssid=' + ssid_val + '&password=' + ssid_pass;
 							$.get(url, function(data) {
 								if(data){
@@ -32,7 +32,7 @@
 					$("#ap_set").on("click", function() {
 					        var ssid_ap_val =  $('#ssid_ap').val();
 						var ssid_ap_pass = $('#password_ap').val();
-						if(ssid != '' && ssid_pass != ''){
+						if(ssid_ap_val != '' && ssid_ap_pass != ''){
 							var url = '/ssidap?ssidAP=' + ssid_ap_val + '&passwordAP=' + ssid_ap_pass;
 							$.get(url, function(data) {
 								if(data){
@@ -90,17 +90,18 @@
 							<h4>Термометры</h4>
 						</a>
 					</li>
+					<li>
+						<a href="/edit.htm">
+							<h4>Редактор</h4>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div id="content" class="container">
-					<div id="gif-load" class="text-center"><img class="rounded mx-auto d-block" src="https://electro-velo.ru/esp/img/gif-load.gif"></div>
-				</div>
-			</div>
+		<div id="content" class="container">
+			<div id="gif-load" class="text-center"><img class="rounded mx-auto d-block" src="/img/gif-load.gif"></div>
 		</div>
 	</body>
 </html>

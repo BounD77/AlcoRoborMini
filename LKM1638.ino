@@ -16,11 +16,6 @@ void LKM1638_init(){
     tm.setLED(i, 0);
     delay(80);
   }
-  for(int i = 7; i >= 0; i--){
-    tm.displayASCII(i, '8', true);
-    tm.setLED(i, 2);
-    delay(80);
-  }
 
   //обновляем на LKM1638 температуру
   ts.add(2, Draw_LKM1638_int, [&](void*) { // Запустим задачу 2 с интервалом Draw_LKM1638_int(1000)
@@ -147,5 +142,17 @@ void BlinkInfoLed(bool is_green){
   tm.setLED(7, 0);    
 }
 
+void RunningLeds(bool is_red){
+   if(is_red){
+    for(byte i = 0; i < 8; i++){
+      tm.setLED(i, 1);
+    }
+   } else{
+      for(byte i = 0; i < 8; i++){
+        tm.setLED(i, 2);
+      }
+   }
+   delay(1000);
+}
 
 

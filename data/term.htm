@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>ESP8266WS Термометры</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="https://electro-velo.ru/esp/css/style.css">
-		<link rel="stylesheet" href="https://electro-velo.ru/esp/css/bootstrap.min.css">
-		<script type="text/javascript" src="https://electro-velo.ru/esp/js/jquery.min.js"></script>
-		<script type="text/javascript" src="https://electro-velo.ru/esp/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://electro-velo.ru/esp/js/term.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/term.js"></script>
 	</head>
 	<nav class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container  bg-info">
@@ -44,17 +44,18 @@
 							<h4>Термометры</h4>
 						</a>
 					</li>
+					<li>
+						<a href="/edit.htm">
+							<h4>Редактор</h4>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div id="content" class="container">
-					<div id="gif-load" class="text-center"><img class="rounded mx-auto d-block" src="https://electro-velo.ru/esp/img/gif-load.gif"></div>
-				</div>
-			</div>
+		<div id="content" class="container">
+			<div id="gif-load" class="text-center"><img class="rounded mx-auto d-block" src="/img/gif-load.gif"></div>
 		</div>
 	</body>
 </html>
